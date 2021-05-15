@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
               Text(
                 'Flutter & Dart Newbie',
                 style: TextStyle(
-                  fontFamily: 'Roboto',
+                  fontFamily: 'Lobster',
                 ),
               )
             ],
