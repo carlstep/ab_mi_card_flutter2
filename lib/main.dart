@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
                 backgroundImage: AssetImage('assets/images/profile_picA.png'),
               ),
               Text(
-                'I Am Morph',
+                'Cal Stephens',
                 style: GoogleFonts.balooThambi(
                   fontSize: 40.0,
                   fontWeight: FontWeight.w100,
@@ -30,8 +30,12 @@ class MyApp extends StatelessWidget {
               ),
               Text(
                 'Flutter & Dart Newbie',
-                style: TextStyle(
-                  fontFamily: 'Lobster',
+                style: GoogleFonts.caveat(
+                  //fontFamily: 'Lobster',
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: .1,
+                  color: Colors.black,
                 ),
               )
             ],
