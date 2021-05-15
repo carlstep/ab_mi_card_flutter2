@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
               ),
               Text(
                 'Cal Stephens',
-                style: GoogleFonts.balooThambi(
+                style: GoogleFonts.caveat(
                   fontSize: 40.0,
                   fontWeight: FontWeight.w100,
                   letterSpacing: .3,
@@ -30,10 +30,10 @@ class MyApp extends StatelessWidget {
               ),
               Text(
                 'Flutter & Dart Newbie',
-                style: GoogleFonts.caveat(
+                style: GoogleFonts.balooThambi(
                   //fontFamily: 'Lobster',
-                  fontSize: 28.0,
-                  fontWeight: FontWeight.w700,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w300,
                   letterSpacing: .1,
                   color: Colors.black,
                 ),
