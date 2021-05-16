@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
 }
+
+final Uri _emailLaunchUri = Uri(
+    scheme: 'mailto',
+    path: 'carlstep333@me.com',
+    queryParameters: {'subject': 'Personal_mail!'});
 
 class MyApp extends StatelessWidget {
   @override
@@ -11,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.teal[300],
+        backgroundColor: Colors.blueGrey[800],
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -27,89 +33,63 @@ class MyApp extends StatelessWidget {
                 'Cal Stephens',
                 style: GoogleFonts.caveat(
                   fontSize: 40.0,
-                  fontWeight: FontWeight.w100,
                   letterSpacing: .3,
                   color: Colors.yellow[400],
                 ),
               ),
               Text(
-                'FLUTTER & DART DEVELOPER',
-                style: GoogleFonts.balooTammudu(
-                  //fontFamily: 'Lobster',
+                'FLUTTER & DART',
+                style: GoogleFonts.dosis(
                   fontSize: 24.0,
-                  //fontWeight: FontWeight.w100,
                   letterSpacing: .1,
-                  color: Colors.grey[800],
+                  color: Colors.grey[500],
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.grey[100],
-                    width: 2,
-                  ),
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.grey[100],
-                ),
-                //color: Colors.yellowAccent[100],
-                //width: 250.0,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 80.0),
-                padding: EdgeInsets.all(5.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Icon(
-                      Icons.phone_iphone,
-                      color: Colors.teal,
-                      size: 30.0,
-                    ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      '+324 666 9999 21',
-                      style: GoogleFonts.balooTammudu(
-                        fontSize: 18.0,
-                        fontStyle: FontStyle.normal,
-                        color: Colors.teal[800],
-                      ),
-                    )
-                  ],
+              SizedBox(
+                height: 20.0,
+                width: 200.0,
+                child: Divider(
+                  color: Colors.yellow,
+                  //height: 2.0,
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.grey[100],
-                    width: 2,
+              Card(
+                color: Colors.blueGrey[500],
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 70.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone_iphone,
+                    color: Colors.yellow[600],
                   ),
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.grey[100],
+                  title: Text(
+                    '+352 66 777 9999',
+                    style: GoogleFonts.oxygen(
+                      fontWeight: FontWeight.w300,
+                      fontSize: 20.0,
+                      color: Colors.yellow[600],
+                    ),
+                  ),
                 ),
-                //color: Colors.yellowAccent[100],
-                //width: 250.0,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 80.0),
-                padding: EdgeInsets.all(5.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Icon(
-                      Icons.email_outlined,
-                      color: Colors.teal,
-                      size: 30.0,
-                    ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
+              ),
+              Card(
+                color: Colors.blueGrey[500],
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 70.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email_outlined,
+                    color: Colors.yellow[600],
+                  ),
+                  title: GestureDetector(
+                    onTap: () => launch(_emailLaunchUri.toString()),
+                    child: Text(
                       'cal333@incode.com',
-                      style: GoogleFonts.balooTammudu(
-                        fontSize: 18.0,
-                        fontStyle: FontStyle.normal,
-                        color: Colors.teal[800],
+                      style: GoogleFonts.oxygen(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.yellow[600],
                       ),
                     ),
-                  ],
+                  ),
                 ),
               ),
             ],
