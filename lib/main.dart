@@ -22,22 +22,25 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              CircleAvatar( // holds image
+              CircleAvatar(
+                // holds image
                 radius: 60.0,
                 backgroundImage: AssetImage('assets/images/profile_picA.png'),
               ),
               SizedBox(
                 height: 10.0,
               ),
-              Text( // text container for name
-                'Cal Stephens', 
+              Text(
+                // text container for name
+                'Cal Stephens',
                 style: GoogleFonts.caveat(
                   fontSize: 40.0,
                   letterSpacing: .3,
                   color: Colors.yellow[400],
                 ),
               ),
-              Text( // Text container for job description
+              Text(
+                // Text container for job description
                 'FLUTTER & DART',
                 style: GoogleFonts.dosis(
                   fontSize: 24.0,
@@ -45,7 +48,8 @@ class MyApp extends StatelessWidget {
                   color: Colors.grey[500],
                 ),
               ),
-              SizedBox( // adds some space between name/job details and the take action information.
+              SizedBox(
+                // adds some space between name/job details and the take action information.
                 height: 20.0,
                 width: 200.0,
                 child: Divider(
@@ -53,7 +57,11 @@ class MyApp extends StatelessWidget {
                   //height: 2.0,
                 ),
               ),
-              Card( // card to hold the phone number and icon
+              Card(
+                // card to hold the phone number and icon
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
                 color: Colors.blueGrey[500],
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 70.0),
                 child: ListTile(
@@ -61,7 +69,8 @@ class MyApp extends StatelessWidget {
                     Icons.phone_iphone,
                     color: Colors.yellow[600],
                   ),
-                  title: Text( // TODO setup gesture to trigger phone cal.
+                  title: Text(
+                    // TODO setup gesture to trigger phone call.
                     '+352 66 777 9999',
                     style: GoogleFonts.oxygen(
                       fontWeight: FontWeight.w300,
@@ -71,7 +80,11 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
-              Card( // card to hold the email and icon
+              Card(
+                // card to hold the email and icon
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
                 color: Colors.blueGrey[500],
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 70.0),
                 child: ListTile(
@@ -79,7 +92,8 @@ class MyApp extends StatelessWidget {
                     Icons.email_outlined,
                     color: Colors.yellow[600],
                   ),
-                  title: GestureDetector( // GestureDetector to trigger sending email.
+                  title: GestureDetector(
+                    // GestureDetector to trigger sending email.
                     onTap: () => launch(_emailLaunchUri.toString()),
                     child: Text(
                       'cal333@incode.com',
